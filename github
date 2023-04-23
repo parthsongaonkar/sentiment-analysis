@@ -1,0 +1,72 @@
+$ git pull https://github.com/parthsongaonkar/files.git
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~ (master)
+$ mkdir important
+mkdir: cannot create directory ‘important’: File exists
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~ (master)
+$ mkdir latest
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~ (master)
+$ cd latest
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+$ git init
+Initialized empty Git repository in C:/Users/PARTH/latest/.git/
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+$ git add test.html
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+$ git add two.html
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+$ git add three.html
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+$ git add four.html
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+$ git add five.html
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+$ git add --all
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   five.html
+        new file:   four.html
+        new file:   test.html
+        new file:   three.html
+        new file:   two.html
+
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+$ git commit -m "main"
+[master (root-commit) c70eea6] main
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 five.html
+ create mode 100644 four.html
+ create mode 100644 test.html
+ create mode 100644 three.html
+ create mode 100644 two.html
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+$ git remote add origin "https://github.com/parthsongaonkar/files.git"
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+$ git push -u origin
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+$ git push -u origin maste
