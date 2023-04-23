@@ -1,0 +1,125 @@
+Microsoft Windows [Version 10.0.19044.2846]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\PARTH>docker version
+Client:
+ Cloud integration: v1.0.31
+ Version:           20.10.24
+ API version:       1.41
+ Go version:        go1.19.7
+ Git commit:        297e128
+ Built:             Tue Apr  4 18:28:08 2023
+ OS/Arch:           windows/amd64
+ Context:           default
+ Experimental:      true
+
+Server: Docker Desktop 4.18.0 (104112)
+ Engine:
+  Version:          20.10.24
+  API version:      1.41 (minimum version 1.12)
+  Go version:       go1.19.7
+  Git commit:       5d6db84
+  Built:            Tue Apr  4 18:18:42 2023
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.6.18
+  GitCommit:        2456e983eb9e37e47538f59ea18f2043c9a73640
+ runc:
+  Version:          1.1.4
+  GitCommit:        v1.1.4-0-g5fd4c4d
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+
+C:\Users\PARTH>docker run --name ubuntucontainer -it ubuntu
+root@56b52fe064ba:/# cd temp
+bash: cd: temp: No such file or directory
+root@56b52fe064ba:/# ls
+bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@56b52fe064ba:/# cd temp
+bash: cd: temp: No such file or directory
+root@56b52fe064ba:/# cd tmp
+root@56b52fe064ba:/tmp# ls
+root@56b52fe064ba:/tmp# exit
+exit
+
+C:\Users\PARTH>docker different ubuntucontainer
+docker: 'different' is not a docker command.
+See 'docker --help'
+
+C:\Users\PARTH>docker diff ubuntucontainer
+C /root
+A /root/.bash_history
+
+C:\Users\PARTH>docker image
+
+Usage:  docker image COMMAND
+
+Manage images
+
+Commands:
+  build       Build an image from a Dockerfile
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Display detailed information on one or more images
+  load        Load an image from a tar archive or STDIN
+  ls          List images
+  prune       Remove unused images
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rm          Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+Run 'docker image COMMAND --help' for more information on a command.
+
+C:\Users\PARTH>docker images
+REPOSITORY              TAG       IMAGE ID       CREATED          SIZE
+images/php              latest    d82bd28effe3   37 minutes ago   485MB
+parthsongaonkar         latest    9e0fc3a89eb3   20 hours ago     485MB
+parthsongaonkar/test1   latest    9e0fc3a89eb3   20 hours ago     485MB
+ubuntu                  latest    08d22c0ceb15   6 weeks ago      77.8MB
+hello-world             latest    feb5d9fea6a5   19 months ago    13.3kB
+
+C:\Users\PARTH>docker commit ubuntucontainer updateubuntu
+sha256:0e2517fb33358a2770cebadb0c9fadf69400bc5958f60b0ac2143f62a7f951dc
+
+C:\Users\PARTH>docker tag 08d22c0ceb15
+"docker tag" requires exactly 2 arguments.
+See 'docker tag --help'.
+
+Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
+Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+C:\Users\PARTH>docker tag 08d22c0ceb15 parthsongaonkar
+
+C:\Users\PARTH>docker tag 08d22c0ceb15 parthsongaonkar/repository
+
+C:\Users\PARTH>docker images
+REPOSITORY                   TAG       IMAGE ID       CREATED          SIZE
+updateubuntu                 latest    0e2517fb3335   2 minutes ago    77.8MB
+images/php                   latest    d82bd28effe3   40 minutes ago   485MB
+parthsongaonkar/test1        latest    9e0fc3a89eb3   20 hours ago     485MB
+parthsongaonkar              latest    08d22c0ceb15   6 weeks ago      77.8MB
+ubuntu                       latest    08d22c0ceb15   6 weeks ago      77.8MB
+parthsongaonkar/repository   latest    08d22c0ceb15   6 weeks ago      77.8MB
+hello-world                  latest    feb5d9fea6a5   19 months ago    13.3kB
+
+C:\Users\PARTH>docker tag 08d22c0ceb15 parthsongaonkar/repository:latest
+
+C:\Users\PARTH>docker push 08d22c0ceb15 parthsongaonkar/repository:latest
+"docker push" requires exactly 1 argument.
+See 'docker push --help'.
+
+Usage:  docker push [OPTIONS] NAME[:TAG]
+
+Push an image or a repository to a registry
+
+C:\Users\PARTH>docker push parthsongaonkar/repository:latest
+The push refers to repository [docker.io/parthsongaonkar/repository]
+b93c1bd012ab: Mounted from library/ubuntu
+latest: digest: sha256:5523f822d85895b0a75236aba20ff6bf4135721b031fceee7a5c4a74a700c1e6 size: 529
+
+C:\Users\PARTH>
