@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone repository') {
+            steps {
+                git 'https://github.com/9OmP/Demo2.git'
+            }
+        }
+        
+
+        stage('Deploy to XAMPP') {
+            steps {
+                bat '''xcopy /E /Y
+                C:\\Users\\ompat\\Demo 
+                C:\\xampp\\htdocs'''
+            }
+        }
+    }
+}
