@@ -1,55 +1,29 @@
-$ git pull https://github.com/parthsongaonkar/files.git
 
-PARTH@DESKTOP-0GS0K52 MINGW64 ~ (master)
-$ mkdir important
-mkdir: cannot create directory ‘important’: File exists
+PARTH@DESKTOP-0GS0K52 MINGW64 ~
+$ cd prathamesh
 
-PARTH@DESKTOP-0GS0K52 MINGW64 ~ (master)
-$ mkdir latest
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/prathamesh (master)
+$ rm -fr .git
 
-PARTH@DESKTOP-0GS0K52 MINGW64 ~ (master)
-$ cd latest
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/prathamesh
+$ cd
 
-PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+PARTH@DESKTOP-0GS0K52 MINGW64 ~
+$ mkdir myproject
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~
+$ cd myproject
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/myproject
 $ git init
-Initialized empty Git repository in C:/Users/PARTH/latest/.git/
+Initialized empty Git repository in C:/Users/PARTH/myproject/.git/
 
-PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
-$ git add test.html
-
-PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
-$ git add two.html
-
-PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
-$ git add three.html
-
-PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
-$ git add four.html
-
-PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
-$ git add five.html
-
-PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/myproject (master)
 $ git add --all
 
-PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
-$ git status
-On branch master
-
-No commits yet
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-        new file:   five.html
-        new file:   four.html
-        new file:   test.html
-        new file:   three.html
-        new file:   two.html
-
-
-PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
-$ git commit -m "main"
-[master (root-commit) c70eea6] main
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/myproject (master)
+$ git commit -m "first commit"
+[master (root-commit) 2d18217] first commit
  5 files changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 five.html
  create mode 100644 four.html
@@ -57,16 +31,62 @@ $ git commit -m "main"
  create mode 100644 three.html
  create mode 100644 two.html
 
-PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
-$ git remote add origin "https://github.com/parthsongaonkar/files.git"
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/myproject (master)
+$ git remote add origin https://github.com/parthsongaonkar/push.git
 
-PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
-$ git push -u origin
-fatal: The current branch master has no upstream branch.
-To push the current branch and set the remote as upstream, use
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/myproject (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 238 bytes | 238.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/parthsongaonkar/push.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
 
-    git push --set-upstream origin master
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/myproject (master)
+$ git pull origin master
+From https://github.com/parthsongaonkar/push
+ * branch            master     -> FETCH_HEAD
+Already up to date.
 
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/myproject (master)
+$ cd
 
-PARTH@DESKTOP-0GS0K52 MINGW64 ~/latest (master)
-$ git push -u origin maste
+PARTH@DESKTOP-0GS0K52 MINGW64 ~
+$ mkdir myproject2
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~
+$ cd myproject2
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/myproject2
+$ git init
+Initialized empty Git repository in C:/Users/PARTH/myproject2/.git/
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/myproject2 (master)
+$ git pull origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/myproject2 (master)
+$ git pull origin master https://github.com/parthsongaonkar/push.git
+fatal: invalid refspec 'https://github.com/parthsongaonkar/push.git'
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/myproject2 (master)
+$ git remote add origin https://github.com/parthsongaonkar/push.git
+
+PARTH@DESKTOP-0GS0K52 MINGW64 ~/myproject2 (master)
+$ git pull origin master
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 218 bytes | 13.00 KiB/s, done.
+From https://github.com/parthsongaonkar/push
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
