@@ -1,3 +1,12 @@
+Dockerfile
+FROM php
+COPY ./index.php ./
+EXPOSE 3000
+CMD ["php", "-S", "0.0.0.0:3000"]
+index.php
+<html>
+<?php echo "Hello" ?>
+</html>
 Microsoft Windows [Version 10.0.19044.2846]
 (c) Microsoft Corporation. All rights reserved.
 
